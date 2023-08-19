@@ -1,13 +1,15 @@
 package tarea;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Tarea {
     private String descripcion;
     private String prioridad;
-    private boolean completa;
-    private Date fechaLimite;
-
+    private boolean completa = false;
+    private LocalDate fechaLimite;
+    private boolean vencida;
     public String getDescripcion() {
+        if (completa)
+            return " |Vencida|" + descripcion;
         return descripcion;
     }
 
@@ -23,7 +25,7 @@ public class Tarea {
         this.prioridad = prioridad;
     }
 
-    public Date getFechaLimite() {
+    public LocalDate getFechaLimite() {
         return fechaLimite;
     }
     public boolean getCompleta() {
@@ -33,7 +35,7 @@ public class Tarea {
         this.completa = completa;
     }
 
-    public void setFechaLimite(Date fechaLimite) {
+    public void setFechaLimite(LocalDate fechaLimite) {
         this.fechaLimite = fechaLimite;
     }
     public void modificarDescripcion(String nuevaDesc) {
@@ -41,5 +43,9 @@ public class Tarea {
     }
     public void cambiarPrioridad(String nuevaPrioridad) {
         prioridad = nuevaPrioridad;
+    }
+    public boolean vencida() {
+        LocalDate actual = LocalDate.now();
+        return actual.isAfter(fechaLimite);
     }
 }

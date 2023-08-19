@@ -2,7 +2,9 @@ import linkedList.ListaDoblementeEnlazada;
 import linkedList.ListaSimplementeEnlazada;
 import queue.Cola;
 import stack.Pila;
+import tarea.Tarea;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -136,10 +138,41 @@ public class Main {
         apilar(p);
         desapilar(p);
         System.out.println("Tope: " + p.tope());*/
+        // -----------Lista de tareas.----------------
+        Tarea supermercado = new Tarea();
+        supermercado.setDescripcion("Ir al super mañana");
+        supermercado.setCompleta(false);
+        LocalDate hoy = LocalDate.now();
+        supermercado.setFechaLimite(hoy.plusDays(1));
+        System.out.println("Tarea: " + supermercado.getDescripcion());
+        if (supermercado.getCompleta()) {
+            System.out.println("Estado: Completa");
+        } else {
+            System.out.println("Estado: Incompleta");
+        }
+        System.out.println("Fecha limite " + supermercado.getFechaLimite());
 
-        System.out.println("Hello");
+        Tarea repuesto = new Tarea();
+        repuesto.setDescripcion("Consultar repuesto del auto");
+        repuesto.setFechaLimite(hoy.minusDays(1));
+        repuesto.setCompleta(true);
+        System.out.println("Tarea: " + repuesto.getDescripcion());
+        if (repuesto.getCompleta()) {
+            System.out.println("Estado: Completa");
+        } else {
+            System.out.println("Estado: Incompleta");
+        }
+        System.out.println("Fecha limite " + repuesto.getFechaLimite());
 
-
-
+        Tarea cine = new Tarea();
+        cine.setDescripcion("Ir al cine a ver la nueva pelicula de Marvel");
+        cine.setFechaLimite(hoy.minusDays(1));
+        System.out.println("Tarea: " + cine.getDescripcion());
+        if (cine.getCompleta()) {
+            System.out.println("Estado: Completa");
+        } else {
+            System.out.println("Estado: Incompleta");
+        }
+        System.out.println("Fecha limite " + cine.getFechaLimite());
     }
 }
