@@ -5,19 +5,19 @@ public class Biblioteca {
     Biblioteca() {
         libros = new ArrayList<Libro>();
     }
-   public ArrayList<Libro> buscarPorTitulo(Libro libro) {
+   public ArrayList<Libro> buscarPorTitulo(String titulo) {
        ArrayList<Libro> resultados = new ArrayList<Libro>();
        for (Libro l : libros) {
-           if (l.getTitulo().toLowerCase().equals(libro.getTitulo().toLowerCase())) {
+           if (l.getTitulo().equalsIgnoreCase(titulo)) {
                resultados.add(l);
            }
        }
        return resultados;
    }
-    public ArrayList<Libro> buscarPorAutor(Libro libro) {
+    public ArrayList<Libro> buscarPorAutor(String autor) {
         ArrayList<Libro> resultados = new ArrayList<Libro>();
         for (Libro l : libros) {
-            if (l.getAutor().toLowerCase().equals(libro.getAutor().toLowerCase())) {
+            if (l.getAutor().equalsIgnoreCase(autor)) {
                 resultados.add(l);
             }
         }
