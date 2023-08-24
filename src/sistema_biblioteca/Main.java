@@ -16,6 +16,7 @@ public class Main {
         System.out.println();
         obj.prestar(libro1);
         obj.prestar(libro2);
+        System.out.println("Cantidad total de prestamos: " + biblioteca1.cantidadPrestamos());
     }
 
     public void prestar(Libro l) {
