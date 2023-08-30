@@ -51,6 +51,14 @@ public class Libro {
         }
         return false;
     }
+    public boolean devolverLibro() {
+        if (ejemplaresPrestados > 0) {
+            ejemplares++;
+            ejemplaresPrestados -= 1;
+            return true;
+        }
+        return false;
+    }
     public String descripcion() {
         return "El libro " + "'" + titulo + "'" + " de " + autor + " tiene " + numPaginas + " paginas y quedan: " + ejemplares + " ejemplares ya que se prestaron " + ejemplaresPrestados + " libros";
     }
