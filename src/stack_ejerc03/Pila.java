@@ -1,4 +1,4 @@
-package stack;
+package stack_ejerc03;
 import nodo.Nodo;
 
 public class Pila {

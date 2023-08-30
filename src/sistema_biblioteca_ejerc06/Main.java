@@ -1,7 +1,4 @@
-package sistema_biblioteca;
-
-import java.sql.SQLOutput;
-import java.util.ArrayList;
+package sistema_biblioteca_ejerc06;
 
 public class Main {
     public static void main(String[] args) {

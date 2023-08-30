@@ -1,4 +1,4 @@
-package sistema_biblioteca;
+package sistema_biblioteca_ejerc06;
 
 public class Libro {
     private final String titulo, autor;

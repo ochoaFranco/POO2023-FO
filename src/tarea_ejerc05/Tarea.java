@@ -1,4 +1,4 @@
-package tarea;
+package tarea_ejerc05;
 import java.time.LocalDate;
 
 public class Tarea {

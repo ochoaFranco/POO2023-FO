@@ -1,6 +1,5 @@
-package linkedList;
+package linkedList_ejerc01_02;
 
-import nodo.Nodo;
 import nodo.NodoListaDoble;
 
 public class ListaDoblementeEnlazada {

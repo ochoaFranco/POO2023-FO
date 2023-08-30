@@ -1,4 +1,4 @@
-package sistema_biblioteca;
+package sistema_biblioteca_ejerc06;
 import java.util.ArrayList;
 public class Biblioteca {
     private ArrayList<Libro> libros;
@@ -35,5 +35,4 @@ public class Biblioteca {
         }
         return total;
     }
-
 }

@@ -1,4 +1,4 @@
-package queue;
+package queue_ejerc_04;
 
 import nodo.Nodo;
 
