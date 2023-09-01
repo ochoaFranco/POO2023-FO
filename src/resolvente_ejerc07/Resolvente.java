@@ -16,6 +16,7 @@ public class Resolvente {
     ArrayList<Integer> resolver(int a, int b, int c) {
         ArrayList<Integer> raices = new ArrayList<>();
         int multiplicacion = ((b * b) - (4 * a * c));
+        System.out.println("Testing something out");
         
 
     }
