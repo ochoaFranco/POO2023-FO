@@ -34,6 +34,8 @@ public class Jugador {
 	    return puntajeTotal;
 	}
 	
-	
+	public ArrayList<Palabra> getPalabras() {
+	    return palabras;
+	}
 
 }
