@@ -4,39 +4,17 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la longitud de la password.");
+        System.out.print("Ingrese el la longitud de la coleccion: ");
         int n = sc.nextInt();
-        Password miPassword1 = new Password(n);
-        Password miPassword2 = new Password();
-        System.out.println("Tu password es: " + miPassword1.getPassword() + " " + miPassword1.getLongitud() + " caracteres.");
-        if (miPassword1.isFuerte()) {
-            System.out.println("Su password es fuerte.");
-        } else {
-            System.out.println("Su password no es fuerte.");
-            System.out.println("Regenerando password..");
-            miPassword1.regenerar();
-            miPassword1.getPassword();
-            if (miPassword1.isFuerte()) {
-                System.out.print("Ahora su password es fuerte: ");
-                System.out.println(miPassword1.getPassword());
-            }
+        Password coleccion[] = new Password[n];
+        for (int i = 0; i < coleccion.length; i++) {
+            coleccion[i] = new Password();
         }
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Tu password es: " + miPassword2.getPassword() + " " + miPassword2.getLongitud() + " caracteres.");
-        if (miPassword2.isFuerte()) {
-            System.out.println("Su password es fuerte.");
-
-        } else {
-            System.out.println("Su password no es fuerte.");
-            System.out.println("Regenerando password..");
-            miPassword2.regenerar();
-            miPassword2.getPassword();
-            if (miPassword2.isFuerte()) {
-                System.out.print("Ahora su password es fuerte: ");
-                System.out.println(miPassword2.getPassword());
-            }
+        for (int i = 0; i < coleccion.length; i++) {
+            if (coleccion[i].isFuerte())
+                System.out.println("<" + coleccion[i].getPassword() + "> - Fuerte");
+            else
+                System.out.println("<" + coleccion[i].getPassword() + "> - Debil");
         }
     }
 }
