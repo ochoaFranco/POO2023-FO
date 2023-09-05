@@ -18,15 +18,15 @@ public class Main {
         LocalDate fechaConFormato2 = miFecha1.formatoFecha(f2, f2Formato);
         System.out.println("Fecha con formato 1: " + fechaConFormato1);
         System.out.println("Fecha con formato 2: " + fechaConFormato2);
-//        System.out.print("Ingrese la 3er fecha para ves si se encuentra entre las otrdas dos ingresadas (dd-MM-yyyy o MM-dd-yyyy) : ");
-//        String f3 = sc.nextLine();
-//        System.out.print("Ingrese el formato de la fecha 3 (dd-MM-yyyy o MM-dd-yyyy): ");
-//        String f3Formato = sc.nextLine();
-//        LocalDate fechaConFormato3 = miFecha1.formatoFecha(f3, f3Formato);
-//        if (miFecha1.entreFechas(fechaConFormato3, fechaConFormato1, fechaConFormato2))
-//            System.out.println("La fecha" + fechaConFormato3 + " SE encuentra entre: " + fechaConFormato1 + " y" + fechaConFormato2);
-//        else
-//            System.out.println("La fecha " + fechaConFormato3 + " NO se encuentra entre: " + fechaConFormato1 + " y " + fechaConFormato2);
+        System.out.print("Ingrese la 3er fecha para ves si se encuentra entre las otrdas dos ingresadas (dd-MM-yyyy o MM-dd-yyyy) : ");
+        String f3 = sc.nextLine();
+        System.out.print("Ingrese el formato de la fecha 3 (dd-MM-yyyy o MM-dd-yyyy): ");
+        String f3Formato = sc.nextLine();
+        LocalDate fechaConFormato3 = miFecha1.formatoFecha(f3, f3Formato);
+        if (miFecha1.entreFechas(fechaConFormato3, fechaConFormato1, fechaConFormato2))
+            System.out.println("La fecha" + fechaConFormato3 + " SE encuentra entre: " + fechaConFormato1 + " y" + fechaConFormato2);
+        else
+            System.out.println("La fecha " + fechaConFormato3 + " NO se encuentra entre: " + fechaConFormato1 + " y " + fechaConFormato2);
 
         if (miFecha1.mayor(fechaConFormato1, fechaConFormato2)) {
             System.out.println("La fecha " + fechaConFormato1 + " es mayor que: " + fechaConFormato2);
