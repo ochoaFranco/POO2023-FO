@@ -1,8 +1,8 @@
-import linkedList_ejerc01_02.ListaDoblementeEnlazada;
-import linkedList_ejerc01_02.ListaSimplementeEnlazada;
-import queue_ejerc_04.Cola;
-import stack_ejerc03.Pila;
-import tarea_ejerc05.Tarea;
+import TP_1.linkedList_ejerc01_02.ListaDoblementeEnlazada;
+import TP_1.linkedList_ejerc01_02.ListaSimplementeEnlazada;
+import TP_1.queue_ejerc_04.Cola;
+import TP_1.stack_ejerc03.Pila;
+import TP_1.tarea_ejerc05.Tarea;
 
 import java.time.LocalDate;
 import java.util.Scanner;
