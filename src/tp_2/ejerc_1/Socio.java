@@ -9,7 +9,7 @@ public class Socio {
     private final int nro_socio;
     private int telefono, edad;
     private String email, direccion;
-    private ArrayList<LocalDate> cuotas = new ArrayList<LocalDate>();
+    private ArrayList<Double> cuotas = new ArrayList<Double>();
     private LocalDate fecha_inscripcion;
     private enum tipo_suscripcion {
         BASICA,
@@ -80,10 +80,14 @@ public class Socio {
         return null;
     }
 
-    // TODO I need to figure out how to pay it.
     public void abonarCuota() {
-        LocalDate hoy = LocalDate.now();
-        cuotas.add(hoy);
+        if (getSuscripcion().equalsIgnoreCase("basica")) {
+            cuotas.add(500.560);
+        } else if (getSuscripcion().equalsIgnoreCase("intermedia")) {
+            cuotas.add(1500.452);
+        } else {
+            cuotas.add(1900.434);
+        }
     }
     public LocalDate getFechaInscripcion() {
         return fecha_inscripcion;
