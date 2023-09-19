@@ -15,15 +15,14 @@ public class PaqueteTurismo {
 
     private void armarExcursiones(GuiaTurismo guia) {
         Random random = new Random();
-        int excursionRandom = random.nextInt(guia.getExcursiones().size()); // random index en el rango de la lista.
+        int excursionRandom = random.nextInt(guia.getExcursiones().size()) + 1; // random index en el rango de la lista.
         ArrayList<String> excursiones = guia.getExcursiones();
         for (int i = 0; i < excursionRandom; i++ ) {
-            int randomIndex = random.nextInt(guia.getExcursiones().size()); // obtengo un indice random.
-            excursionesPaquete.add(excursiones.get(randomIndex));
+            excursionesPaquete.add(excursiones.get(i));
         }
     }
     public void mostrarPaquete() {
-        String descripcion = nombre + " " + destino;
+        String descripcion = "Descripcion del paquete: " + nombre + " " + destino;
         System.out.println(descripcion);
         System.out.println("Contiene las siguientes excursiones: ");
         for (String s : excursionesPaquete) {

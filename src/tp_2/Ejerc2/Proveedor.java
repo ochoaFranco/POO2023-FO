@@ -53,20 +53,20 @@ public class Proveedor {
         if (transporte != null) {
             switch (transporte) {
                 case CompaniaAreas:
-                    return "Compania Areas" + nombre;
+                    return "Compania Areas" + " " + nombre;
                 case Terrestres:
-                    return "Terrestres" + nombre;
+                    return "Terrestres" + " " + nombre;
                 case Marítimas:
-                    return "Maritimas" + nombre;
+                    return "Maritimas" + " " + nombre;
             }
         } if (hospedaje != null) {
             switch (hospedaje) {
                 case bungalos:
-                    return "Bungalo" + nombre;
+                    return "Bungalo" + " " + nombre;
                 case cadenas_hoteles:
-                    return "Cadenas de hoteles" + nombre;
+                    return "Cadenas de hoteles" + " " + nombre;
                 case hosterias:
-                    return "Hosterias" + nombre;
+                    return "Hosterias" + " " + nombre;
             }
         }
         return null;
