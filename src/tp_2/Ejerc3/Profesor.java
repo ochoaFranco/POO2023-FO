@@ -25,7 +25,7 @@ public class Profesor {
         return sueldo;
     }
 
-    public void cobrarSueldo(double monto) {
+    void cobrarSueldo(double monto) {
         sueldo += monto;
     }
 

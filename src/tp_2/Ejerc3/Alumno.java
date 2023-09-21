@@ -40,13 +40,4 @@ public class Alumno {
         this.tel = tel;
     }
 
-    public boolean isAsistencia() {
-        return asistencia;
-    }
-
-    public void asistirAClase(ArrayList<Integer> asistencia) {
-        int valor = asistencia.get(credencial - 100);
-        valor++;
-        asistencia.set(credencial - 100, valor);
-    }
 }

@@ -5,10 +5,10 @@ import java.util.Collections;
 import java.util.Random;
 
 public class GestorAcademia {
-    private static ArrayList<Comision> comisiones;
+    private static ArrayList<Comision> comisiones = new ArrayList<Comision>();
     private static ArrayList<Integer> asistencia = new ArrayList<>(Collections.nCopies(500, 0));
     private static int proxIdEstudiante = 100;
-    private static void inscribirALumno(Alumno alu, Comision com) {
+    public static void inscribirALumno(Alumno alu, Comision com) {
         com.agregarAlumno(alu);
         alu.setCredencial(proxIdEstudiante);
         proxIdEstudiante++;
@@ -17,7 +17,7 @@ public class GestorAcademia {
     public static void agregarComisiones(Comision com) {
         comisiones.add(com);
     }
-    public static void tomarAsistencia() {
+    public static void calcularSueldo() {
         for (Comision s: comisiones) {
             for (Alumno a: s.getListadoAlumnos()) {
                 double monto = 10 * asistencia.get(a.getCredencial() - 100);
@@ -36,7 +36,14 @@ public class GestorAcademia {
                 mejorRemunerada = c;
             }
         }
-        System.out.println("La comision mejor remunerada es: " + mejorRemunerada.getDisciplina() + " " + mejorRemunerada.getNombre());
+        System.out.println("La comision mejor remunerada es: " + mejorRemunerada.getDisciplina().getNombre() + " " + mejorRemunerada.getNombre());
+    }
+
+    public static void tomarAsistencia(Alumno alu) {
+        int credencial = alu.getCredencial();
+        int valor = asistencia.get(credencial - 100);
+        valor++;
+        asistencia.set(credencial - 100, valor);
     }
 
 }

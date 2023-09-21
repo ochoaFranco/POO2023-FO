@@ -34,7 +34,7 @@ public class Comision {
         }
     }
 
-    public void agregarAlumno(Alumno alu) {
+    void agregarAlumno(Alumno alu) {
         listadoAlumnos.add(alu);
     }
     public void mostrarAlumnos() {
@@ -60,6 +60,18 @@ public class Comision {
                 this.nivel = Nivel.AVANZADO;
                 break;
         }
+    }
+
+    public String getNivel() {
+        switch (nivel) {
+            case INICIAL:
+                return "INICIAL";
+            case INTERMEDIO:
+                return "INTERMEDIO";
+            case AVANZADO:
+                return "AVANZADO";
+        }
+        return null;
     }
 
     public String getNombre() {
