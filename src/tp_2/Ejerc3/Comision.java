@@ -10,6 +10,9 @@ public class Comision {
     private Disciplina disciplina;
     private Profesor profesor;
     private ArrayList<Alumno> listadoAlumnos = new ArrayList<Alumno>();
+    public Comision() {
+
+    }
 
     public Comision(String nombre, String dia, String horario, String nivel, Disciplina disciplina, Profesor profesor) {
         this.nombre = nombre;
@@ -40,6 +43,24 @@ public class Comision {
         }
     }
 
+    public ArrayList<Alumno> getListadoAlumnos() {
+        return  listadoAlumnos;
+    }
+
+    public void setNivel(String nivel) {
+        nivel = nivel.toUpperCase();
+        switch (nivel) {
+            case "INICIAL":
+                this.nivel = Nivel.INICIAL;
+                break;
+            case "INTERMEDIO":
+                this.nivel = Nivel.INTERMEDIO;
+                break;
+            case "AVANZADO":
+                this.nivel = Nivel.AVANZADO;
+                break;
+        }
+    }
 
     public String getNombre() {
         return nombre;

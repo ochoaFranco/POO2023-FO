@@ -25,6 +25,10 @@ public class Profesor {
         return sueldo;
     }
 
+    public void cobrarSueldo(double monto) {
+        sueldo += monto;
+    }
+
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }

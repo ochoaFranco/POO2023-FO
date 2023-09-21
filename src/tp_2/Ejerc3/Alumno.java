@@ -1,9 +1,11 @@
 package tp_2.Ejerc3;
 
+import java.util.ArrayList;
+
 public class Alumno {
     private String nombre;
     private int tel;
-    private boolean asistencia;
+    private boolean asistencia = false;
     private int credencial;
 
     public int getCredencial() {
@@ -42,7 +44,9 @@ public class Alumno {
         return asistencia;
     }
 
-    public void asistirAClase() {
-        this.asistencia = true;
+    public void asistirAClase(ArrayList<Integer> asistencia) {
+        int valor = asistencia.get(credencial - 100);
+        valor++;
+        asistencia.set(credencial - 100, valor);
     }
 }
