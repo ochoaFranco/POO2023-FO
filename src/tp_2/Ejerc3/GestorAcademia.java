@@ -23,6 +23,8 @@ public class GestorAcademia {
                 double monto = 10 * asistencia.get(a.getCredencial() - 100);
                 s.getProfesor().cobrarSueldo(monto);
             }
+            System.out.println(s.getProfesor().getNombre() + " " + s.getProfesor().getSueldo());
+            System.out.println();
         }
     }
 
@@ -36,7 +38,7 @@ public class GestorAcademia {
                 mejorRemunerada = c;
             }
         }
-        System.out.println("La comision mejor remunerada es: " + mejorRemunerada.getDisciplina().getNombre() + " " + mejorRemunerada.getNombre());
+        System.out.println("La comision mejor remunerada es: Disciplina " + mejorRemunerada.getDisciplina().getNombre() + " " + mejorRemunerada.getNombre());
     }
 
     public static void tomarAsistencia(Alumno alu) {
