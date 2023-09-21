@@ -31,6 +31,16 @@ public class Comision {
         }
     }
 
+    public void agregarAlumno(Alumno alu) {
+        listadoAlumnos.add(alu);
+    }
+    public void mostrarAlumnos() {
+        for (Alumno a : listadoAlumnos) {
+            System.out.println("Nombre: " + a.getNombre() + " credencial: " + a.getCredencial());
+        }
+    }
+
+
     public String getNombre() {
         return nombre;
     }

@@ -4,6 +4,16 @@ public class Alumno {
     private String nombre;
     private int tel;
     private boolean asistencia;
+    private int credencial;
+
+    public int getCredencial() {
+        return credencial;
+    }
+
+    public void setCredencial(int credencial) {
+        this.credencial = credencial;
+    }
+
     public Alumno(String nombre) {
         this.nombre = nombre;
     }
