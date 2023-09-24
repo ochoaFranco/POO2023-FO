@@ -10,7 +10,7 @@ public class CuentaNormal {
     private double montoTotal = saldo + limiteGiroEnDescubierto;
     private LocalDate fechaPlazoFijoInicio, fechaPlazoFijoFinal;
     private double montoInvertido = 0;
-    private boolean prestadoCancelado = false;
+    private boolean prestamoCancelado = false;
     void agregarSaldo (double saldo) {
         giroEnDescubierto -= saldo;
         if (giroEnDescubierto < 0 ) {
@@ -31,7 +31,7 @@ public class CuentaNormal {
             this.montoInvertido = saldo;
             return true;
         }
-        if (LocalDate.now().isAfter(fechaPlazoFijoFinal) && !prestadoCancelado) {
+        if (LocalDate.now().isAfter(fechaPlazoFijoFinal) && !prestamoCancelado) {
             montoInvertido += montoInvertido * 1.40;
             saldo += montoInvertido; // cobrar el interes del plazo fijo.
             this.fechaPlazoFijoInicio = LocalDate.now(); // setear el nuevo plazo fijo.
@@ -42,19 +42,31 @@ public class CuentaNormal {
         return false;
     }
 
-    void descontarSaldo(double saldo) {
+    void descontarSaldo(double saldo, boolean precancelar) {
         if (this.saldo - saldo >= 0) {
             this.saldo -= saldo;
         }
-        else if ((this.saldo + limiteGiroEnDescubierto) - saldo < 0) {
+        else if ((this.saldo + limiteGiroEnDescubierto) - saldo < 0 && (this.saldo + montoInvertido) - saldo < 0) {
             System.out.println("No tiene saldo sufiente.");
             return;
         }
         else {
-            System.out.println("Se usara el giro en descubierto");
-            double montoTotal = this.saldo + limiteGiroEnDescubierto;
-            giroEnDescubierto = (this.saldo - saldo) * -1;
-            this.saldo = 0;
+            if (precancelar) {
+                if ((saldo + montoInvertido) - saldo >= 0) {
+                    this.saldo += montoInvertido;
+                    this.saldo -= saldo;
+                    montoInvertido = 0;
+                } else {
+                    this.saldo += montoInvertido;
+                    System.out.println("Se usara el giro en descubierto");
+                    giroEnDescubierto = (this.saldo - saldo) * -1;
+                    this.saldo = 0;
+                }
+            } else {
+                System.out.println("Se usara el giro en descubierto");
+                giroEnDescubierto = (this.saldo - saldo) * -1;
+                this.saldo = 0;
+            }
         }
     }
 
@@ -64,7 +76,7 @@ public class CuentaNormal {
         if (diasDiferencia >= 30) {
             montoInvertido += montoInvertido * 1.05;
             saldo += montoInvertido;
-            prestadoCancelado = true;
+            prestamoCancelado = true;
         } else {
             saldo += montoInvertido;
             montoInvertido = 0;

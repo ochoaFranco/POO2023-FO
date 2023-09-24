@@ -22,8 +22,8 @@ public class Cliente {
     public boolean invertirSaldo(double saldo, int dias) {
         return cuenta.activarPlazoFijo(saldo, dias);
     }
-    public void gastar(double saldo) {
-        cuenta.descontarSaldo(saldo);
+    public void gastar(double saldo, boolean precancelar) {
+        cuenta.descontarSaldo(saldo, precancelar);
     }
 
     public double getSaldo() {
