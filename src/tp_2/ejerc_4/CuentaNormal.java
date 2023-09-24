@@ -30,7 +30,7 @@ public class CuentaNormal {
             return true;
         }
         if (LocalDate.now().isAfter(fechaPlazoFijoFinal)) {
-            montoInvertido += montoInvertido * 0.4;
+            montoInvertido += montoInvertido * 1.40;
             saldo += montoInvertido; // cobrar el interes del plazo fijo.
             this.fechaPlazoFijoInicio = LocalDate.now(); // setear el nuevo plazo fijo.
             this.fechaPlazoFijoFinal = this.fechaPlazoFijoInicio.plusDays(dias);

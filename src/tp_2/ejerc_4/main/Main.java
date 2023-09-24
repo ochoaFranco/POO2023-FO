@@ -1,6 +1,7 @@
 package tp_2.ejerc_4.main;
 
 import tp_2.ejerc_4.Cliente;
+import tp_2.ejerc_4.CuentaCredito;
 import tp_2.ejerc_4.CuentaNormal;
 
 import java.util.Scanner;
@@ -8,7 +9,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         CuentaNormal cuenta = new CuentaNormal();
-        Cliente c1 = new Cliente("Franco", cuenta);
+        CuentaCredito cuentaCredito = new CuentaCredito();
+        Cliente c1 = new Cliente("Franco", cuenta, cuentaCredito);
         Scanner sc = new Scanner(System.in);
         double monto;
         System.out.println("Ingrese el monto que desea agregar a su billetera normal: ");
@@ -39,6 +41,19 @@ public class Main {
         if (!c1.invertirSaldo(monto, dias)) {
             System.out.println("No puede invertir nuevamenete, debe esperar.");
         }
+
+        // CUENTA CREDITO.
+        System.out.println("Monto disponible para compras a credito: "  + c1.getMontoCompraCredito());
+        System.out.println("Saldo deudor: "  + c1.getSaldoDeudor());
+        System.out.println("Ingrese el monto que desea usar de su  billetera a credito: ");
+        monto = sc.nextDouble();
+        c1.compraCredito(monto);
+        System.out.println("Saldo deudor: "  + c1.getSaldoDeudor());
+        System.out.println("Monto disponible para compras a credito: "  + c1.getMontoCompraCredito());
+        System.out.println("Ingrese el monto que desea pagar: ");
+        monto = sc.nextDouble();
+        c1.pagarCredito(monto);
+        System.out.println("Saldo deudor: "  + c1.getSaldoDeudor());
     }
 
 }
