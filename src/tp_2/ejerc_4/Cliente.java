@@ -22,6 +22,24 @@ public class Cliente {
     public boolean invertirSaldo(double saldo, int dias) {
         return cuenta.activarPlazoFijo(saldo, dias);
     }
+    public void gastar(double saldo) {
+        cuenta.descontarSaldo(saldo);
+    }
+
+    public double getSaldo() {
+        return cuenta.getSaldo();
+    }
+    public double getLimiteGiroEnDescubierto() {
+        return cuenta.getLimiteGiroEnDescubierto();
+    }
+
+    public double getDeudaGiroDescubierto() {
+        return cuenta.deudaGiroEnDescubierto();
+    }
+
+    public double getMontoInvertido() {
+        return cuenta.getMontoInvertido();
+    }
 
 
 }
