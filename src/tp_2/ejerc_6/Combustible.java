@@ -2,24 +2,27 @@ package tp_2.ejerc_6;
 
 public class Combustible {
     private enum Tipo{GASOIL, NAFTA, KEROSENE};
-    private Tipo tipo;
+    private Tipo tipoCombustible;
     private double precioVenta;
 
-    public Combustible(String tipo, double precioVenta) {
-        tipo = tipo.toLowerCase();
-        switch (tipo) {
+    public Combustible(String tipoCombustible, double precioVenta) {
+        tipoCombustible = tipoCombustible.toLowerCase();
+        switch (tipoCombustible) {
             case "nafta":
-                this.tipo = Tipo.NAFTA;
+                this.tipoCombustible = Tipo.NAFTA;
+                break;
             case "kerosene":
-                this.tipo = Tipo.KEROSENE;
+                this.tipoCombustible = Tipo.KEROSENE;
+                break;
             case "gasoil":
-                this.tipo = Tipo.GASOIL;
+                this.tipoCombustible = Tipo.GASOIL;
+                break;
         }
         this.precioVenta = precioVenta;
     }
 
-    public String getTipo() {
-        switch (tipo) {
+    public String getTipoCombustible() {
+        switch (tipoCombustible) {
             case NAFTA:
                 return "nafta";
             case GASOIL:
