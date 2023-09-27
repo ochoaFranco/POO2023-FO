@@ -1,4 +1,4 @@
-package tp_2.ejerc_6;
+package tp_2.ejerc_6_7;
 
 public class Combustible {
     private enum Tipo{GASOIL, NAFTA, KEROSENE};
