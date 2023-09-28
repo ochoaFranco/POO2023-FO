@@ -34,7 +34,6 @@ public class Publicacion {
     public String getTelContacto() {
         return telContacto;
     }
-
     public void setTelContacto(String telContacto) {
         this.telContacto = telContacto;
     }
@@ -49,13 +48,5 @@ public class Publicacion {
 
     public int getANIOPUBLICACION() {
         return ANIOPUBLICACION;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 }

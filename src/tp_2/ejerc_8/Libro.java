@@ -6,12 +6,13 @@ public class Libro extends Publicacion {
 
     private ArrayList<String> autores = new ArrayList<>();
     private final int ISBN;
-    private int ejemplares, numPaginas, ejemplaresPrestados;
+    private int ejemplares, ejemplaresPrestados;
 
-    public Libro(String nombre, String editor, String telContacto, int cantPaginas, int ANIOPUBLICACION, String autor, int ISBN) {
+    public Libro(String nombre, String editor, String telContacto, int cantPaginas, int ANIOPUBLICACION, String autor, int ISBN, int cantEjemplares) {
         super(nombre, editor, telContacto, cantPaginas, ANIOPUBLICACION);
         this.autores.add(autor);
         this.ISBN = ISBN;
+        ejemplares = cantEjemplares;
     }
 
     public int getEjemplaresPrestados() {
@@ -44,13 +45,6 @@ public class Libro extends Publicacion {
         this.ejemplares = ejemplares;
     }
 
-    public int getNumPaginas() {
-        return numPaginas;
-    }
-
-    public void setNumPaginas(int numPaginas) {
-        this.numPaginas = numPaginas;
-    }
     public boolean prestarLibro() {
         if (ejemplares > 1) {
             ejemplares -= 1;
@@ -68,7 +62,7 @@ public class Libro extends Publicacion {
         return false;
     }
     public void descripcion() {
-        System.out.println("El libro " + "'" + getTitulo() + "'" + " de " + " tiene " + numPaginas + " paginas y quedan: " + ejemplares + " ejemplares ya que se prestaron " + ejemplaresPrestados + " libros");
+        System.out.println("El libro " + "'" + getNombre() + "'" +  "tiene " + getCantPaginas() + " paginas y quedan: " + ejemplares + " ejemplares ya que se prestaron " + ejemplaresPrestados + " libros");
         mostrarAutores();
 
     }
